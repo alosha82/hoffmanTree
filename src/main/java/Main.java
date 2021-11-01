@@ -12,11 +12,11 @@ public class Main
     @SneakyThrows
     public static void main(String[] args)
     {
-        String locationOfTheOriginalTextFile="D:\\games alexsey\\Zipper\\gtgame.txt";
-        String locationWhereToSaveZippedTextFile="D:\\games alexsey\\Zipper\\gtgame1.txt";
-        String locationFromWhereToReadZippedTextFile="D:\\games alexsey\\Zipper\\gtgame1.txt";
-        String locationWhereToSaveUnzippedTextFile="D:\\games alexsey\\Zipper\\gtgame2.txt";
-        String s = FileUtils.readFileToString(new File(locationOfTheOriginalTextFile),"UTF-8");
+        String locationOfTheOriginalTextFile="test.txt";
+        String locationWhereToSaveZippedTextFile="/test1.txt";
+        String locationFromWhereToReadZippedTextFile="/test1.txt";
+        String locationWhereToSaveUnzippedTextFile="/test2.txt";
+        String s = FileUtils.readFileToString(CommonFunctions.getClassForName(locationOfTheOriginalTextFile),"UTF-8");
 
 
         MapCreator1 Map = new MapCreator1();

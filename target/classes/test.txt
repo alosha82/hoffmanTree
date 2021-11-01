@@ -1,0 +1,41 @@
+package main.java;
+
+public class LinkedMatrixDoubleStatic {
+
+    private final Double value;
+    private final LinkedMatrixDoubleStatic[][] matrix;
+    private final int x,y;
+
+    public LinkedMatrixDoubleStatic(double value, LinkedMatrixDoubleStatic[][] matrix, int x, int y) {
+        this.value = new Double(value);
+        this.matrix = matrix;
+        this.x = x;
+        this.y = y;
+    }
+    public LinkedMatrixDoubleStatic(Double value, LinkedMatrixDoubleStatic[][] matrix, int x, int y) {
+        this.value = value;
+        this.matrix = matrix;
+        this.x = x;
+        this.y = y;
+    }
+
+
+    public Double getLeft() {return get(x, y-1);}
+    public Double getRight() {return get(x, y+1);}
+    public Double getUp() {return get(x-1, y);}
+    public Double getDown() {return get(x+1, y);}
+
+    private Double get(int i, int j){
+        if(i < 0 || j < 0 || i >= matrix.length || j >= matrix[0].length) {
+            System.err.println("given index is out of matrix bounds");
+            return null;
+        }
+
+        return matrix[i][j].value;
+    }
+
+    public Double getValue(){
+        return value;
+    }
+
+}
